@@ -1,0 +1,103 @@
+//JAVA PROGRAM TO FIND LAST DIGIT OF A NUMBER
+public class LastDigitFinder {
+    public static int getLastDigit(int number) {
+        int lastDigit = Math.abs(number) % 10;
+        return lastDigit;
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        int input1 = 12345;
+        int result1 = getLastDigit(input1);
+        System.out.println("Last digit of " + input1 + ": " + result1);
+
+        int input2 = -987654321;
+        int result2 = getLastDigit(input2);
+        System.out.println("Last digit of " + input2 + ": " + result2);
+
+        int input3 = 0;
+        int result3 = getLastDigit(input3);
+        System.out.println("Last digit of " + input3 + ": " + result3);
+    }
+}
+
+//JAVA PROGRAM TO FIND WHETHER THE NUMBER IS ODD OR EVEN
+public class EvenNumberChecker {
+    public static int checkEven(int number) {
+        if (number == 0 || number % 2 == 0) {
+            return 2; // The number is even
+        } else {
+            return 1; // The number is odd
+        }
+    }
+    public static void main(String[] args) {
+        // Example usage
+        int input1 = 6;
+        int result1 = checkEven(input1);
+        System.out.println("Result for " + input1 + ": " + result1);
+
+        int input2 = -9;
+        int result2 = checkEven(input2);
+        System.out.println("Result for " + input2 + ": " + result2);
+
+        int input3 = 0;
+        int result3 = checkEven(input3);
+        System.out.println("Result for " + input3 + ": " + result3);
+    }
+}
+
+
+//JAVA PROGRAM TO FIND SECOND LAST DIGIT OF A GIVEN NUMBER
+
+public class SecondLastDigitFinder {
+    public static int getSecondLastDigit(int number) {
+        int absNumber = Math.abs(number);
+       
+        if (absNumber < 10) {
+            // If the number has only one digit, return -1 to indicate no second last digit
+            return -1;
+        } else {
+            int secondLastDigit = (absNumber / 10) % 10;
+            return secondLastDigit;
+        }
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        int input1 = 12345;
+        int result1 = getSecondLastDigit(input1);
+        System.out.println("Second last digit of " + input1 + ": " + result1);
+
+        int input2 = -987654321;
+        int result2 = getSecondLastDigit(input2);
+        System.out.println("Second last digit of " + input2 + ": " + result2);
+
+        int input3 = 7;
+        int result3 = getSecondLastDigit(input3);
+        System.out.println("Second last digit of " + input3 + ": " + result3);
+    }
+}
+
+
+//JAVA PROGRAM TO FIND THE SUM OF LAST TWO DIGITS OF  GIVEN NUMBER
+
+public class LastTwoDigitsSum {
+    public static int sumOfLastTwoDigits(int number1, int number2) {
+        int lastDigit1 = number1 % 10;
+        int lastDigit2 = number2 % 10;
+       
+        int secondLastDigit1 = (number1 / 10) % 10;
+        int secondLastDigit2 = (number2 / 10) % 10;
+       
+        int sum = lastDigit1 + lastDigit2 + secondLastDigit1 + secondLastDigit2;
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        // Example usage
+        int input1 = 12345;
+        int input2 = 67890;
+        int result = sumOfLastTwoDigits(input1, input2);
+        System.out.println("Sum of the last two digits of " + input1 + " and " + input2 + ": " + result);
+    }
+}
